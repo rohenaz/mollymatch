@@ -1,0 +1,22 @@
+{
+  "name": "mollymatch",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "start": "bun run index.ts",
+    "clean": "rimraf -rf dist"
+  },
+  "dependencies": {
+    "@bsv/sdk": "^1.1.12",
+    "@types/express": "^4.17.21",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "js-1sat-ord": "^0.1.7"
+  }
+}
