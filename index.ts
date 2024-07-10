@@ -1,8 +1,9 @@
 import express from "express";
 import { createOrdinals, fetchPayUtxos } from "js-1sat-ord";
+
 import { PrivateKey } from "@bsv/sdk";
-import type { CreateOrdinalsConfig } from "js-1sat-ord/dist/createOrdinals";
 import { config } from "dotenv";
+import type { CreateOrdinalsConfig, Inscription } from "js-1sat-ord";
 config();
 
 const app = express();
@@ -27,7 +28,7 @@ app.get("/", async (req, res) => {
 
 	// inscription
 	const dataB64 = Buffer.from("MollyMatch Rocks").toString("base64");
-	const inscription = { dataB64, contentType: "text/plain" };
+	const inscription: Inscription = { dataB64, contentType: "text/plain" };
 
 	console.log("Making ordinal itself (createOrdinal)");
 
